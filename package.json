@@ -1,0 +1,72 @@
+{
+  "name": "react-ai-stream-markdown",
+  "version": "0.2.0",
+  "description": "Stream AI/UGC Markdown into React safely with coalescing, callbacks, and auto-scroll. Renders via safe-markdown-react.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup --dts",
+    "dev": "vite --config example/vite.config.ts --open",
+    "prepublishOnly": "npm run build",
+    "test": "vitest run",
+    "example:dev": "vite --config example/vite.config.ts --open",
+    "example:build": "npm run build && vite build --config example/vite.config.ts",
+    "example:preview": "vite preview --config example/vite.config.ts"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "dependencies": {
+    "safe-markdown-react": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "react-dom": "^18.3.1",
+    "tsup": "^8.0.1",
+    "tsx": "^4.15.7",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.0",
+    "vitest": "^1.6.0"
+  },
+  "keywords": [
+    "react",
+    "markdown",
+    "stream",
+    "ai",
+    "llm",
+    "chat",
+    "streaming",
+    "renderer"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/graemegeorge/react-ai-stream-markdown.git"
+  },
+  "bugs": {
+    "url": "https://github.com/graemegeorge/react-ai-stream-markdown/issues"
+  },
+  "homepage": "https://github.com/graemegeorge/react-ai-stream-markdown#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Graeme George",
+  "license": "MIT"
+}
