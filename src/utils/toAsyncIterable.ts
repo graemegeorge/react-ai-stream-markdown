@@ -1,9 +1,11 @@
-export async function* toAsyncIterable(src: ReadableStream<string|Uint8Array> | AsyncIterable<string|Uint8Array>) {
+export async function* toAsyncIterable(
+  src: ReadableStream<string | Uint8Array> | AsyncIterable<string | Uint8Array>
+) {
   if (isAsyncIterable(src)) {
-    for await (const c of src as AsyncIterable<string|Uint8Array>) yield c;
+    for await (const c of src as AsyncIterable<string | Uint8Array>) yield c;
     return;
   }
-  const stream = src as ReadableStream<string|Uint8Array>;
+  const stream = src as ReadableStream<string | Uint8Array>;
   const reader = stream.getReader();
   try {
     while (true) {
@@ -17,5 +19,5 @@ export async function* toAsyncIterable(src: ReadableStream<string|Uint8Array> | 
 }
 
 function isAsyncIterable(v: any): v is AsyncIterable<any> {
-  return v && typeof v[Symbol.asyncIterator] === 'function';
+  return v && typeof v[Symbol.asyncIterator] === "function";
 }
